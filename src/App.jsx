@@ -109,25 +109,38 @@ function App() {
   }
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
-      <div className="text-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Weekly Meal Planner</h1>
-        <button 
-          onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            alert("Sync Link Copied! Open this URL on your laptop to mirror data.");
-          }}
-          className="mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs rounded-full px-4 py-1.5 transition-colors shadow-sm"
-        >
-          📋 Copy Sync Link
-        </button>
+    <div className="p-4 max-w-4xl mx-auto flex flex-col min-h-screen justify-between">
+      {/* Top Main Section Group */}
+      <div>
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-gray-800">Weekly Meal Planner</h1>
+          <button 
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href);
+              alert("Sync Link Copied! Open this URL on your laptop to mirror data.");
+            }}
+            className="mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs rounded-full px-4 py-1.5 transition-colors shadow-sm"
+          >
+            📋 Copy Sync Link
+          </button>
+        </div>
+        
+        <MealChart
+          mealData={mealData}
+          updateMeal={updateMeal}
+          deleteMeal={deleteMeal}
+        />
       </div>
-      
-      <MealChart
-        mealData={mealData}
-        updateMeal={updateMeal}
-        deleteMeal={deleteMeal}
-      />
+
+      {/* Dynamic Personal Branding Footer Block */}
+      <footer className="mt-12 pt-6 border-t border-gray-100 text-center text-sm text-gray-400">
+        <p className="font-medium">
+          Designed & Built with ❤️ by <span className="text-blue-500 font-semibold hover:underline cursor-pointer">Shantanu Mukherjee</span>
+        </p>
+        <p className="text-xs mt-1 text-gray-300">
+          © {new Date().getFullYear()} All Rights Reserved.
+        </p>
+      </footer>
     </div>
   );
 }
