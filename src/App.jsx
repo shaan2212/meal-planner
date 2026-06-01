@@ -135,7 +135,7 @@ function App() {
       {/* Dynamic Personal Branding Footer Block */}
       <footer className="mt-12 pt-6 border-t border-gray-100 text-center text-sm text-gray-400">
         <p className="font-medium">
-          Designed & Built with ❤️ by <span className="text-blue-500 font-semibold hover:underline cursor-pointer">Shantanu Mukherjee</span>
+          Designed & Built with ❤️ by <span className="text-blue-500 font-semibold hover:underline cursor-pointer">Moumita Mukherjee & Shantanu Mukherjee</span>
         </p>
         <p className="text-xs mt-1 text-gray-300">
           © {new Date().getFullYear()} All Rights Reserved.
